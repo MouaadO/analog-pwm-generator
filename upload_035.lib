@@ -1,0 +1,18 @@
+* Nexperia official BAT85 electrical model, unchanged.
+* Source: https://assets.nexperia.com/documents/spice-model/BAT85.txt
+* Subcircuit nodes: anode, cathode. Leaded DO34 part; band marks cathode.
+.SUBCKT BAT85 1 2
+D1 1 2 BAT85
+R1 1 2 5.416E+7
+.MODEL BAT85 D
++ IS = 2.076E-7
++ N = 1.023
++ BV = 33
++ IBV = 10E-6
++ RS = 2.326
++ CJO = 1.21E-11
++ VJ = 0.1319
++ M = 0.2904
++ EG = 0.69
++ XTI = 2
+.ENDS

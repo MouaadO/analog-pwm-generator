@@ -1,0 +1,30 @@
+* SN74ACT240N octal inverter, physical PDIP20 pin order.
+* Functional approximation, NOT the unmodified TI SCAM124 macro.
+* TI SCAM124 has 2.4e-5-ohm input resistors and an output inductor in parallel
+* with its output resistance; neither is appropriate for this LTspice circuit.
+* Nominal per-channel 9-ohm source/sink is a conservative approximation versus
+* SCAM124's interpolated typical 6.17-ohm resistance at 5V; not a hardware guarantee.
+* DRV_CORNER=1 selects 31-ohm source / 19-ohm sink as a resistance sensitivity test.
+* TTL input threshold 1.4V, delay4ns plus0.1ns channel skew, 3p input, 7p output.
+* Soft40mA current limit is an added modeling assumption, not actual silicon protection.
+* Pins1/19 OE grounded. Channels1/2 invert RAW/DLY; remaining6 drive OUT1/2,
+* three channels per output, identical inputs and OEs within this same package.
+.subckt SN74ACT240N OE1 A11 Y24 A12 Y23 A13 Y22 A14 Y21 VN A21 Y14 A22 Y13 A23 Y12 A24 Y11 OE2 VP
+X11 A11 Y11 OE1 VP VN ACT240_CHANNEL TD=4n
+X12 A12 Y12 OE1 VP VN ACT240_CHANNEL TD=4.1n
+X13 A13 Y13 OE1 VP VN ACT240_CHANNEL TD=4.2n
+X14 A14 Y14 OE1 VP VN ACT240_CHANNEL TD=4.3n
+X21 A21 Y21 OE2 VP VN ACT240_CHANNEL TD=4n
+X22 A22 Y22 OE2 VP VN ACT240_CHANNEL TD=4.1n
+X23 A23 Y23 OE2 VP VN ACT240_CHANNEL TD=4.2n
+X24 A24 Y24 OE2 VP VN ACT240_CHANNEL TD=4.3n
+.ends
+.subckt ACT240_CHANNEL A Y OE VP VN params: TD=4n
+BA ALOG VN V=if(V(A,VN)>1.4,1,0)
+BOEN EN VN V=if(V(OE,VN)<1.4,1,0)
+AL ALOG EN VN VN VN NL NH VN AND Vhigh=1 Vlow=0 Td={TD} Trise=.6n Tfall=.6n
+BH VP Y I=40m*V(NL,VN)*if(V(OE,VN)<1.4,1,0)*tanh(V(VP,Y)/({if(DRV_CORNER,31,9)}*40m))
+BL Y VN I=40m*V(NH,VN)*if(V(OE,VN)<1.4,1,0)*tanh(V(Y,VN)/({if(DRV_CORNER,19,9)}*40m))
+CA A VN 3p
+CO Y VN 7p
+.ends

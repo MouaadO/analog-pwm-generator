@@ -1,0 +1,13 @@
+* ST L7805CV functional engineering approximation, NOT an official vendor model.
+* Datasheet: https://www.st.com/resource/en/datasheet/l78.pdf Table10/Fig4.
+* Nominal5V, dropout2V, quiescent5mA, Rout17mohm, loop time160ns ASSUMED.
+* REG_VSET and REG_DROP allow sensitivity tests. No thermal/protection/ESR model.
+* Symbol order GND/OUT/IN; REAL TO220 pins1=IN,2=GND/tab,3=OUT.
+.subckt L7805_TRIAL GND OUT IN
+ESET TARGET GND VALUE={min(REG_VSET,max(0,V(IN,GND)-REG_DROP))}
+RFILT TARGET FILTER 10k
+CFILT FILTER GND 16p
+BDRV CORE GND V={max(0,min(V(FILTER,GND),V(IN,GND)-REG_DROP))}
+ROUT CORE OUT .017
+BINPUT IN GND I={5m+max(0,-I(BDRV))}
+.ends

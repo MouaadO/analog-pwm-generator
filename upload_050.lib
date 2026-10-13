@@ -1,0 +1,52 @@
+* Two tracks in ONE 50k dual-gang frequency potentiometer.
+* Matched nominal tracking is assumed. Actual tracking requires specification/calibration.
+.subckt FREQ_A T W B
+RT T W {max(1m,50k*(1-FP))}
+RB W B {max(1m,50k*FP)}
+.ends
+.subckt FREQ_B T W B
+RT T W {max(1m,50k*(1-FP))}
+RB W B {max(1m,50k*FP)}
+.ends
+.subckt DUTY T W B
+RT T W {max(1m,1k*(1-DP))}
+RB W B {max(1m,1k*DP)}
+.ends
+.subckt DEAD T W B
+RT T W {max(1m,1k*(1-DTP))}
+RB W B {max(1m,1k*DTP)}
+.ends
+.subckt SELECT E P C
+RE E C {if(SOURCE,1,1T)}
+RP P C {if(SOURCE,1T,1)}
+.ends
+* Original TI TLC07X_5V family core, applied to TLC072 dual package.
+* Voltage behavior retained. Supply accounting is an engineering assumption.
+.subckt TLC072CP IP IM VP VN OUT
+EISO VISO VN VP VN 1
+BIDD VP VN I=3.5m+max(0,I(VOUT))
+XREAL IP IM VISO VN CORE TLC07X_5V
+VOUT CORE OUT 0
+.ends
+* Original, unmodified ST LMx19 voltage core; TI LM319N through-hole package candidate.
+.subckt LM319_SECTION IP IM VP VN OUT
+XREAL IP IM VP VN OUT LMx19
+.ends
+
+* One dual-gang 1k dead-time potentiometer with opposed voltage sweeps.
+.subckt DT_HIGH T W B
+RT T W {max(1m,1k*(1-DTP))}
+RB W B {max(1m,1k*DTP)}
+.ends
+.subckt DT_LOW T W B
+RT T W {max(1m,1k*DTP)}
+RB W B {max(1m,1k*(1-DTP))}
+.ends
+.subckt ACT240_INV Y A VP VN
+X1 A Y VN VP VN ACT240_CHANNEL TD=4n
+.ends
+.subckt ACT240_3INV Y A VP VN
+X1 A Y VN VP VN ACT240_CHANNEL TD=4n
+X2 A Y VN VP VN ACT240_CHANNEL TD=4.1n
+X3 A Y VN VP VN ACT240_CHANNEL TD=4.2n
+.ends
