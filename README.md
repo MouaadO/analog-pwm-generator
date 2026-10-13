@@ -1,41 +1,44 @@
 # Analog PWM Generator with Adjustable Dead Time
 
-An LTspice circuit study for generating complementary PWM outputs from a shared triangle waveform. The design provides frequency and duty adjustment, two thresholds for dead time, and endpoint handling for the command input.
+An LTspice circuit project that produces complementary PWM outputs from a shared triangle waveform. It combines adjustable frequency and duty cycle with threshold-based dead-time control.
 
-## Tools used
+## What it does
 
-LTspice schematic, custom symbols, SPICE device models and functional models for the regulator and output driver.
+- Generates a triangle carrier and two complementary PWM signals.
+- Adjusts switching frequency, duty cycle and dead time.
+- Supports a potentiometer or external command input.
+- Uses endpoint detection to set constant output states outside the command range.
 
-## How to run
+## Results
+
+The chart compares analytical design frequencies with the nominal LTspice results recorded in the [design notes](docs/design-notes.md).
+
+![Analytical and reported simulated switching frequencies](docs/results/frequency-results.png)
+
+| Reported nominal simulation result | Value |
+| --- | --- |
+| Switching frequency endpoints | 19.99 kHz and 99.69 kHz |
+| Output LOW / HIGH levels | 0.082 V / 4.916 V |
+| Source and sink current | Approximately 26.86 mA per output |
+| Fast-setting dead-time gaps | 0.980 / 0.984 microseconds |
+
+## Tools
+
+LTspice, SPICE device models, custom circuit symbols and functional models.
+
+## Run
 
 1. Open `simulation/analog_pwm_dead_time.asc` in LTspice.
-2. Keep all `.asy` and `.lib` files beside the schematic so local models resolve.
-3. Run the supplied transient analysis.
-4. Probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`.
-5. Adjust the `.param` values for frequency (`FP`), duty (`DP`), dead time (`DTP`), source selection (`SOURCE`) and external command (`VD`).
+2. Run the transient analysis and probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`.
+3. Adjust `FP`, `DP`, `DTP`, `SOURCE` and `VD` to explore frequency, duty, dead time and command settings.
 
-## Files
+Keep the supplied symbols and libraries beside the schematic.
 
-| Folder / file | Purpose |
-| --- | --- |
-| `simulation/analog_pwm_dead_time.asc` | Main circuit schematic |
-| `simulation/*.asy` | Local circuit symbols |
-| `simulation/*.lib` | Semiconductor and functional models |
+## Project files
 
-## Limitations
+- `simulation/`: circuit schematic, symbols and component models.
+- [Design notes](docs/design-notes.md): operating principle and recorded simulation results.
+- [Component bill of materials](docs/component-bill-of-materials.xlsx).
+- `docs/datasheets/`: manufacturer component documentation.
 
-Nominal target frequency is approximately 20–100 kHz. The schematic models a 7805-type regulator, while the supplied purchasing documents select LF50ABV; these versions must be reconciled before hardware work. Output loading, command transitions, component tolerances and regulator corners require further validation. No hardware-performance claim is made. Generated waveforms and prebuilt outputs are excluded.
-
-## Project context
-
-Prepared from academic project files. Collaborative work remains team work; personal names are omitted from this public copy. Original technical comments and interfaces may be in French. No new license has been assigned.
-
-## Supporting documents
-
-- [Design notes](docs/design-notes.md) extracted from the supplied slides.
-- [Component bill of materials](docs/component-bill-of-materials.xlsx), preserved with its formulas. Prices are historical estimates.
-- Manufacturer datasheets in `docs/datasheets/`. Supplier names and third-party attribution are retained.
-
-## Verification status
-
-Local symbol and library references were checked. The LTspice simulation was not rerun in this preparation pass. Historical measurements in the design notes are source claims.
+Developed as a collaborative academic engineering project.
