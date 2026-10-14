@@ -1,8 +1,8 @@
 # Analog PWM Generator with Adjustable Dead Time
 
-An LTspice circuit project that produces complementary PWM outputs from a shared triangle waveform. It combines adjustable frequency and duty cycle with threshold-based dead-time control.
+I designed an analog PWM generator in LTspice with two complementary outputs and adjustable frequency, duty cycle and dead time.
 
-## What it does
+## Main features
 
 - Generates a triangle carrier and two complementary PWM signals.
 - Adjusts switching frequency, duty cycle and dead time.
@@ -11,11 +11,11 @@ An LTspice circuit project that produces complementary PWM outputs from a shared
 
 ## Results
 
-The chart compares analytical design frequencies with the nominal LTspice results recorded in the [design notes](docs/design-notes.md).
+The chart compares the calculated switching frequencies with the LTspice simulations. The circuit calculations are detailed in the [design notes](docs/design-notes.md).
 
 ![Analytical and reported simulated switching frequencies](docs/results/frequency-results.png)
 
-| Reported nominal simulation result | Value |
+| LTspice simulation result | Value |
 | --- | --- |
 | Switching frequency endpoints | 19.99 kHz and 99.69 kHz |
 | Output LOW / HIGH levels | 0.082 V / 4.916 V |
@@ -32,7 +32,7 @@ LTspice, SPICE device models, custom circuit symbols and functional models.
 2. Run the transient analysis and probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`.
 3. Adjust `FP`, `DP`, `DTP`, `SOURCE` and `VD` to explore frequency, duty, dead time and command settings.
 
-Keep the supplied symbols and libraries beside the schematic.
+Keep the symbols and component libraries in the same folder as the schematic.
 
 ## Project files
 
@@ -41,4 +41,4 @@ Keep the supplied symbols and libraries beside the schematic.
 - [Component bill of materials](docs/component-bill-of-materials.xlsx).
 - `docs/datasheets/`: manufacturer component documentation.
 
-Developed as a collaborative academic engineering project.
+Academic group project at the National Polytechnic School of Algiers.
