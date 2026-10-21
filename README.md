@@ -1,19 +1,60 @@
 # Analog PWM Generator with Adjustable Dead Time
 
-I designed an analog PWM generator in LTspice with two complementary outputs and adjustable frequency, duty cycle and dead time.
+I designed an analog PWM generator with two complementary outputs and adjustable frequency, duty cycle and dead time. The project includes the LTspice circuit, a complete KiCad schematic and a compact two-layer PCB.
 
-## Main features
+**Project team:** Amani Mouaad and Cheiffou Melissa.
 
-- Generates a triangle carrier and two complementary PWM signals.
-- Adjusts switching frequency, duty cycle and dead time.
-- Supports a potentiometer or external command input.
-- Uses endpoint detection to set constant output states outside the command range.
+![Analog PWM generator PCB — 3D view](docs/images/pcb-3d.png)
 
-## Results
+## Operating principle
 
-The chart compares the calculated switching frequencies with the LTspice simulations. The circuit calculations are detailed in the [design notes](docs/design-notes.md).
+An integrator and comparator generate a triangular carrier. The duty-cycle command and the dead-time potentiometer establish two comparison thresholds. Comparing the carrier with these thresholds produces complementary PWM signals separated by a non-overlap interval. Endpoint detectors set constant output states when the external command is outside its operating range, and the output buffers provide the current drive.
 
-![Analytical and reported simulated switching frequencies](docs/results/frequency-results.png)
+## Design specifications
+
+| Parameter | Design specification |
+| --- | --- |
+| Outputs | Two complementary PWM signals with adjustable dead time |
+| Switching frequency | 20–100 kHz |
+| Duty-cycle command | 0–100%, selected from a potentiometer or external SMA input |
+| Dead time | Adjustable up to 10% of the switching period |
+| Output levels | Nominal 0 V / 5 V |
+| Output drive target | More than 20 mA source and sink per output |
+| Input supply | 7–10 V DC, centre-positive barrel jack |
+| PCB | 68 × 53 mm, two copper layers, through-hole components |
+
+## PCB design
+
+The board contains 39 fitted components, including five IC packages. Three outward-facing potentiometers adjust duty cycle, frequency and dead time. The external command enters through the SMA connector, and a three-pin selector chooses the command source. The PCB uses an LF50ABV 5 V regulator, project-local footprints and local 3D models.
+
+### Top view
+
+![PWM PCB — top 3D view](docs/images/pcb-3d-top.png)
+
+### Copper layouts
+
+| Front copper | Back copper |
+| --- | --- |
+| ![Front PCB layout](docs/images/pcb-front.png) | ![Back PCB layout](docs/images/pcb-back.png) |
+
+### Complete schematic
+
+![Complete analog PWM schematic](docs/images/schematic.png)
+
+## Open the KiCad project
+
+1. Download or clone the complete repository.
+2. Open [pcb/Analog_PWM.kicad_pro](pcb/Analog_PWM.kicad_pro) in KiCad 8 or newer.
+3. Open `Analog_PWM.kicad_sch` for the schematic or `Analog_PWM.kicad_pcb` for the board.
+4. In the PCB Editor, press **Alt+3** to view the assembled board in 3D.
+
+Keep the local symbol library, footprint library, library tables and `3dmodels` folder beside the project files. [Gerber and drill files](pcb/Manufacturing) are included, together with the [PCB assembly BOM](pcb/BOM_PCB.csv) and [purchasing BOM](pcb/PWM_BOM_AMANI_CHEIFFOU.xlsx).
+
+## LTspice simulation results
+
+The existing simulation uses the 7805 supply model. The chart compares the calculated switching frequencies with the LTspice results; the circuit calculations are detailed in the [design notes](docs/design-notes.md).
+
+![Analytical and simulated switching frequencies](docs/results/frequency-results.png)
 
 | LTspice simulation result | Value |
 | --- | --- |
@@ -22,23 +63,14 @@ The chart compares the calculated switching frequencies with the LTspice simulat
 | Source and sink current | Approximately 26.86 mA per output |
 | Fast-setting dead-time gaps | 0.980 / 0.984 microseconds |
 
-## Tools
+To run the simulation, open `simulation/analog_pwm_dead_time.asc` in LTspice and run the transient analysis. Probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`. Adjust `FP`, `DP`, `DTP`, `SOURCE` and `VD` to explore the control settings. Keep the supplied symbols and component libraries in the simulation folder.
 
-LTspice, SPICE device models, custom circuit symbols and functional models.
+## Repository contents
 
-## Run
-
-1. Open `simulation/analog_pwm_dead_time.asc` in LTspice.
-2. Run the transient analysis and probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`.
-3. Adjust `FP`, `DP`, `DTP`, `SOURCE` and `VD` to explore frequency, duty, dead time and command settings.
-
-Keep the symbols and component libraries in the same folder as the schematic.
-
-## Project files
-
-- `simulation/`: circuit schematic, symbols and component models.
-- [Design notes](docs/design-notes.md): operating principle and recorded simulation results.
-- [Component bill of materials](docs/component-bill-of-materials.xlsx).
-- `docs/datasheets/`: manufacturer component documentation.
+- `pcb/`: KiCad project, complete schematic, routed board, local libraries, 3D models, BOMs and fabrication files.
+- `simulation/`: LTspice circuit, symbols and component models.
+- `docs/images/`: PCB renders, front/back layouts and schematic preview.
+- `docs/design-notes.md`: circuit operation, equations and simulation results.
+- `docs/datasheets/`: component datasheets.
 
 Academic group project at the National Polytechnic School of Algiers.

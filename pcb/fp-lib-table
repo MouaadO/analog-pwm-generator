@@ -1,0 +1,1 @@
+(fp_lib_table (version 7) (lib (name "PWM_Footprints")(type "KiCad")(uri "${KIPRJMOD}/PWM_Footprints.pretty")(options "")(descr "Project-local exact footprints")))

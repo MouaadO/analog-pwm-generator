@@ -1,0 +1,7 @@
+# Keep documentation portable and preserve CAD model files byte for byte.
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.step -text -diff
+*.stp -text -diff
+*.wrl -text -diff

@@ -74,7 +74,7 @@ The thresholds are `END_LOW = 2.287 V` and `END_HIGH = 2.713 V`. The BAT85S diod
 | SN74ACT240N | 1 | Clock inverter and output buffers |
 | LF50ABV | 1 | 5 V supply with a 4.7 µF output capacitor |
 
-The board uses 6-, 8-, 8- and 10-pin header strips. The component estimate is €31.81 including 20% VAT, excluding the power jack, PCB and shipping.
+The board uses 6-, 8-, 8- and 10-pin header strips. The current PCB purchasing list, including the DC input jack, is available in [the BOM](../pcb/PWM_BOM_AMANI_CHEIFFOU.xlsx).
 
 ## LTspice results
 
