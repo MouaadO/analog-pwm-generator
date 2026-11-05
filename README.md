@@ -1,76 +1,115 @@
 # Analog PWM Generator with Adjustable Dead Time
 
-I designed an analog PWM generator with two complementary outputs and adjustable frequency, duty cycle and dead time. The project includes the LTspice circuit, a complete KiCad schematic and a compact two-layer PCB.
+**20–100 kHz · Complementary 5 V outputs · Stackable control PCB**
 
-**Project team:** Amani Mouaad and Cheiffou Melissa.
+An analog PWM generator with adjustable frequency, duty cycle and dead time. The circuit uses a shared triangular carrier, comparison thresholds and output buffers. Its stackable PCB supplies the switching commands for the [58 W synchronous buck converter](https://github.com/MouaadO/synchronous-buck-converter), the second project in the electric-scooter auxiliary-power system.
 
-![Analog PWM generator PCB — 3D view](docs/images/pcb-3d.png)
+**Project team:** Amani Mouaad and Cheiffou Melissa.  
+**IFP SCHOOL · Powertrain · 2026/2027**
 
-## Operating principle
+![Project workflow](docs/images/system-overview.svg)
 
-An integrator and comparator generate a triangular carrier. The duty-cycle command and the dead-time potentiometer establish two comparison thresholds. Comparing the carrier with these thresholds produces complementary PWM signals separated by a non-overlap interval. Endpoint detectors set constant output states when the external command is outside its operating range, and the output buffers provide the current drive.
+## The control half of a two-board system
 
-## Design specifications
+![Analog PWM generator assembled PCB — 3D render](docs/images/pcb-3d.png)
 
-| Parameter | Design specification |
-| --- | --- |
-| Outputs | Two complementary PWM signals with adjustable dead time |
+The PWM board handles the low-level timing commands. The buck power board receives those commands through the Uno Rev3-compatible headers and drives its two power MOSFETs. Keeping the boards separate makes the timing circuit easy to adjust and the power stage easy to inspect.
+
+| Function | Design target |
+|---|---|
+| Outputs | Two complementary PWM signals |
 | Switching frequency | 20–100 kHz |
-| Duty-cycle command | 0–100%, selected from a potentiometer or external SMA input |
-| Dead time | Adjustable up to 10% of the switching period |
-| Output levels | Nominal 0 V / 5 V |
-| Output drive target | More than 20 mA source and sink per output |
-| Input supply | 7–10 V DC, centre-positive barrel jack |
-| PCB | 68 × 53 mm, two copper layers, through-hole components |
+| Duty command | 0–100%, selected from a potentiometer or external SMA input |
+| Dead-time adjustment | Up to 10% of the switching period |
+| Logic levels | Nominal 0 V / 5 V |
+| Drive current | More than 20 mA source and sink per output |
+| Supply | 7–10 V DC, centre-positive barrel jack |
 
-## PCB design
+## How the signal becomes PWM
 
-The board contains 39 fitted components, including five IC packages. Three outward-facing potentiometers adjust duty cycle, frequency and dead time. The external command enters through the SMA connector, and a three-pin selector chooses the command source. The PCB uses an LF50ABV 5 V regulator, project-local footprints and local 3D models.
+1. **Carrier generation:** An integrator produces a rising/falling triangular voltage. A comparator with hysteresis reverses the clock at the carrier limits.
+2. **Command selection:** The selector chooses the duty potentiometer or the external SMA command.
+3. **Threshold generation:** A resistor network combines the command with the dead-time setting to establish two comparison levels.
+4. **Comparison:** The triangle crosses those levels at different instants, creating the two complementary pulse allocations and their non-overlap intervals.
+5. **Output drive:** The buffer stages drive OUT1 and OUT2. Endpoint detectors establish constant states for external commands outside the operating interval.
 
-### Top view
+## Oscillator and timing equations
 
-![PWM PCB — top 3D view](docs/images/pcb-3d-top.png)
+For timing resistance $R_t$ and integrator capacitor $C_{INT}$:
 
-### Copper layouts
+$$I=\frac{CLOCK-V_m}{R_t},\qquad
+\frac{dV_{TRI}}{dt}=-\frac{I}{C_{INT}}$$
+
+The comparator limits and the integrator slope determine the period. For the chosen resistor ratio, the nominal frequency relation is:
+
+$$f\simeq\frac{3}{R_tC_{INT}}$$
+
+The shared carrier keeps the frequency, command and dead-time comparison tied to one switching period. Detailed threshold and frequency calculations are in the [design notes](docs/design-notes.md).
+
+## Current stackable PCB
+
+The current board is **75 × 53 mm**, with a 7 mm extension on the potentiometer side. The extension places the outward-facing controls, regulator and input connectors in the exposed area of the two-board assembly. The 32 mating contacts retain the official Uno Rev3 pattern.
+
+### Top 3D view
+
+![Top view of the PWM board](docs/images/pcb-3d-top.png)
+
+### Header connections to the buck board
+
+| Signal | PWM-board pad | Uno contact |
+|---|---|---|
+| OUT1 / PWM1 | J4 pin 9 | D9 |
+| OUT2 / PWM2 | J4 pin 8 | D10 |
+| Common ground | J4 pin 4; J6 pins 6–7 | GND |
+
+![Two-board PWM and buck assembly](docs/images/stacked-system.png)
+
+The upper board is the [synchronous buck converter](https://github.com/MouaadO/synchronous-buck-converter). Its battery input and 12 V gate-driver supply use separate power terminals.
+
+### Front and back layers
 
 | Front copper | Back copper |
-| --- | --- |
-| ![Front PCB layout](docs/images/pcb-front.png) | ![Back PCB layout](docs/images/pcb-back.png) |
+|---|---|
+| ![PWM front copper layout](docs/images/pcb-front.png) | ![PWM back copper layout](docs/images/pcb-back.png) |
+
+Signal tracks use 0.25 mm widths, PWM output routes 0.40 mm, and supply/ground routes 0.50 mm. The front copper fill distributes 5 V; the back fill provides ground. Local footprints and bundled models define the potentiometers, connectors and IC packages.
 
 ### Complete schematic
 
-![Complete analog PWM schematic](docs/images/schematic.png)
+![Complete PWM generator schematic](docs/images/schematic.png)
 
-## Open the KiCad project
+## Recorded LTspice results
 
-1. Download or clone the complete repository.
-2. Open [pcb/Analog_PWM.kicad_pro](pcb/Analog_PWM.kicad_pro) in KiCad 8 or newer.
-3. Open `Analog_PWM.kicad_sch` for the schematic or `Analog_PWM.kicad_pcb` for the board.
-4. In the PCB Editor, press **Alt+3** to view the assembled board in 3D.
+The existing simulation uses the 7805 supply model. The PCB assembly uses the selected LF50ABV regulator. The following values are the recorded **LTspice results** for the supplied simulation settings:
 
-Keep the local symbol library, footprint library, library tables and `3dmodels` folder beside the project files. [Gerber and drill files](pcb/Manufacturing) are included, together with the [PCB assembly BOM](pcb/BOM_PCB.csv) and [purchasing BOM](pcb/PWM_BOM_AMANI_CHEIFFOU.xlsx).
+| Quantity | Result |
+|---|---:|
+| Frequency endpoints | 19.99 kHz / 99.69 kHz |
+| Output LOW / HIGH | 0.082 V / 4.916 V |
+| Source/sink current | Approximately 26.86 mA per output |
+| Fast-setting non-overlap gaps | 0.980 µs / 0.984 µs |
 
-## LTspice simulation results
+![Calculated and simulated switching-frequency endpoints](docs/results/frequency-results.png)
 
-The existing simulation uses the 7805 supply model. The chart compares the calculated switching frequencies with the LTspice results; the circuit calculations are detailed in the [design notes](docs/design-notes.md).
+## Open and run
 
-![Analytical and simulated switching frequencies](docs/results/frequency-results.png)
+For the hardware, open [pcb/Analog_PWM.kicad_pro](pcb/Analog_PWM.kicad_pro) in KiCad 8 or newer. In PCB Editor, press **Alt+3** for the 3D viewer. Keep the local symbol library, footprint library, tables and `3dmodels` folder beside the project.
 
-| LTspice simulation result | Value |
-| --- | --- |
-| Switching frequency endpoints | 19.99 kHz and 99.69 kHz |
-| Output LOW / HIGH levels | 0.082 V / 4.916 V |
-| Source and sink current | Approximately 26.86 mA per output |
-| Fast-setting dead-time gaps | 0.980 / 0.984 microseconds |
+For simulation, open `simulation/analog_pwm_dead_time.asc` in LTspice and run its transient analysis. Probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`. Parameters `FP`, `DP`, `DTP`, `SOURCE` and `VD` select the operating settings.
 
-To run the simulation, open `simulation/analog_pwm_dead_time.asc` in LTspice and run the transient analysis. Probe `TRI`, `CMD`, `LOW`, `HIGH`, `OUT1` and `OUT2`. Adjust `FP`, `DP`, `DTP`, `SOURCE` and `VD` to explore the control settings. Keep the supplied symbols and component libraries in the simulation folder.
+## Files and tools
 
-## Repository contents
+| Location | Contents |
+|---|---|
+| `pcb/` | KiCad schematic, board, local libraries, assembly BOM and purchasing workbook |
+| `pcb/Manufacturing/` | Gerbers and plated/non-plated drill outputs |
+| `simulation/` | LTspice schematic, symbols and component libraries |
+| [Design notes](docs/design-notes.md) | Oscillator, duty and threshold calculations |
+| `docs/images/` | PCB, schematic and stacked-system renders |
+| `docs/datasheets/` | Component datasheets |
 
-- `pcb/`: KiCad project, complete schematic, routed board, local libraries, 3D models, BOMs and fabrication files.
-- `simulation/`: LTspice circuit, symbols and component models.
-- `docs/images/`: PCB renders, front/back layouts and schematic preview.
-- `docs/design-notes.md`: circuit operation, equations and simulation results.
-- `docs/datasheets/`: component datasheets.
+**Tools:** LTspice, KiCad, manufacturer package drawings and local 3D models.
 
-Academic group project at the National Polytechnic School of Algiers.
+## Related projects
+
+[58 W Synchronous Buck Converter](https://github.com/MouaadO/synchronous-buck-converter) · [Inverter Modulation and PWM](https://github.com/MouaadO/inverter-pwm-experimental-validation)

@@ -1,0 +1,248 @@
+{
+  "date": "2026-10-25",
+  "revision": "H",
+  "parts": [
+    {
+      "reference": "R12",
+      "mpn": "MFR-25FRF52-60K4",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R2",
+      "mpn": "MBA02040C9768FC100",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.wrl"
+    },
+    {
+      "reference": "RV2",
+      "mpn": "PTV09A-2015F-B503",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Bourns_PTV09A2_Envelope.wrl"
+    },
+    {
+      "reference": "J6",
+      "mpn": "PPTC081LFBN-RC",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/PinSocket_1x08_P2.54mm_Vertical.wrl"
+    },
+    {
+      "reference": "R14",
+      "mpn": "MFR-25FRF52-60K4",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R10",
+      "mpn": "MFR-25FBF52-1K",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "C1",
+      "mpn": "MCGPR16V226M5X11",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/C1_D5_H11_Datasheet_Envelope.wrl",
+      "note": "Nominal D5 x H11 mm body; 0.5 mm mounting offset. Original generic height was too short for this part."
+    },
+    {
+      "reference": "D1",
+      "mpn": "BAT85S-TR",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "C6",
+      "mpn": "K104K15X7RF5TL2",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Vishay_K15_P2.5mm_Envelope.wrl"
+    },
+    {
+      "reference": "RV3",
+      "mpn": "PTN16-A01220K1B2",
+      "kind": "manufacturer STEP",
+      "model": "${KIPRJMOD}/3dmodels/PTN16-A01220K1B2_Manufacturer_Aligned.wrl"
+    },
+    {
+      "reference": "R9",
+      "mpn": "MFR-25FBF52-9K76",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R4",
+      "mpn": "MFR-25FBF52-105R",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "C7",
+      "mpn": "K104K15X7RF5TL2",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Vishay_K15_P2.5mm_Envelope.wrl"
+    },
+    {
+      "reference": "U5",
+      "mpn": "SN74ACT240N",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/DIP-20_W7.62mm.wrl"
+    },
+    {
+      "reference": "R15",
+      "mpn": "MFR-25FBF52-1K8",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "C4",
+      "mpn": "K104K15X7RF5TL2",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Vishay_K15_P2.5mm_Envelope.wrl"
+    },
+    {
+      "reference": "C5",
+      "mpn": "K104K15X7RF5TL2",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Vishay_K15_P2.5mm_Envelope.wrl"
+    },
+    {
+      "reference": "R11",
+      "mpn": "MFR-25FBF52-1K",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R7",
+      "mpn": "MFR-25FBF52-12K",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "RV1",
+      "mpn": "PTV09A-2020F-B102",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Bourns_PTV09A2_20mm_Envelope.wrl"
+    },
+    {
+      "reference": "R1",
+      "mpn": "MFR-25FBF52-105R",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "J5",
+      "mpn": "PPTC081LFBN-RC",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/PinSocket_1x08_P2.54mm_Vertical.wrl"
+    },
+    {
+      "reference": "R6",
+      "mpn": "MFR-25FBF52-1K",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R13",
+      "mpn": "MFR-25FBF52-1K",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R5",
+      "mpn": "RNF14BTC12K3",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R8",
+      "mpn": "MFR-25FBF52-1K8",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "R16",
+      "mpn": "MFR-25FBF52-1K8",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl"
+    },
+    {
+      "reference": "U3",
+      "mpn": "LM319N/NOPB",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/DIP-14_W7.62mm.wrl"
+    },
+    {
+      "reference": "J1",
+      "mpn": "PJ-102AH",
+      "kind": "manufacturer STEP",
+      "model": "${KIPRJMOD}/3dmodels/PJ-102AH_Manufacturer_Aligned.wrl"
+    },
+    {
+      "reference": "J4",
+      "mpn": "PPTC101LFBN-RC",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/PinSocket_1x10_P2.54mm_Vertical.wrl"
+    },
+    {
+      "reference": "C3",
+      "mpn": "C317C242F3G5TA",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/C317_5.08mm_Envelope.wrl"
+    },
+    {
+      "reference": "R3",
+      "mpn": "MBA02040C9768FC100",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.wrl"
+    },
+    {
+      "reference": "U2",
+      "mpn": "LM319N/NOPB",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/DIP-14_W7.62mm.wrl"
+    },
+    {
+      "reference": "C2",
+      "mpn": "EEU-FC1H4R7H",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/C2_D5_H11_Datasheet_Envelope.wrl",
+      "note": "Nominal D5 x H11 mm body; 0.5 mm mounting offset. Original generic height was too short for this part."
+    },
+    {
+      "reference": "J2",
+      "mpn": "BU-1420701236",
+      "kind": "datasheet envelope",
+      "model": "${KIPRJMOD}/3dmodels/Mueller_BU1420701236_Envelope.wrl"
+    },
+    {
+      "reference": "U4",
+      "mpn": "LF50ABV",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/TO-220-3_Vertical.wrl"
+    },
+    {
+      "reference": "U1",
+      "mpn": "TLC072CP",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/DIP-8_W7.62mm.wrl"
+    },
+    {
+      "reference": "J7",
+      "mpn": "PPTC061LFBN-RC",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/PinSocket_1x06_P2.54mm_Vertical.wrl"
+    },
+    {
+      "reference": "J3",
+      "mpn": "PPTC031LFBN-RC",
+      "kind": "KiCad package model",
+      "model": "${KIPRJMOD}/3dmodels/PinSocket_1x03_P2.54mm_Vertical.wrl"
+    }
+  ],
+  "manufacturer_geometry": "Exact Same Sky part STEP files downloaded from official website. Geometry rigidly aligned and tessellated for VRML; display colours simplified. Original STEP files retained.",
+  "limitations": [
+    "Bourns20mm family STEP link found via DigiKey but download blocked; RV1/RV2 remain clearly identified datasheet envelopes.",
+    "PTN16 STEP lead rows differ from datasheet5mm grid; PCB follows datasheet p6. Manufacturer geometry retained unchanged.",
+    "Remaining KiCad package models are generic package models, not claimed to be exact-part supplier CAD."
+  ]
+}

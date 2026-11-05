@@ -5,16 +5,16 @@
       "Application": "Pcbnew",
       "Version": "8.0.8"
     },
-    "CreationDate": "2026-10-17T19:33:25+02:00"
+    "CreationDate": "2026-10-25T16:55:14+01:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "Analog_PWM",
       "GUID": "416e616c-6f67-45f5-9057-4d2e6b696361",
-      "Revision": "C"
+      "Revision": "H"
     },
     "Size": {
-      "X": 68.05,
+      "X": 75.05,
       "Y": 53.05
     },
     "LayerNumber": 2,

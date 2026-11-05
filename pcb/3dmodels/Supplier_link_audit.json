@@ -1,0 +1,334 @@
+[
+  {
+    "mpn": "TLC072CP",
+    "supplier_url": "https://fr.farnell.com/c/semiconducteurs-circuits-integres/amplificateurs-comparateurs/amplificateurs-operationnels-aop?brand=texas-instruments&taux-de-balayage-typ-=16v-us",
+    "error": "HTTPSConnectionPool(host='fr.farnell.com', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "U1"
+    ],
+    "additional_source": "https://www.ti.com/product/TLC072/part-details/TLC072CP",
+    "conclusion": "TI confirms PDIP8 P package. KiCad package model used; original BOM link is a search/category page."
+  },
+  {
+    "mpn": "LM319N/NOPB",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/texas-instruments/LM319N-NOPB/9551",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/texas-instruments/LM319N-NOPB/9551",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "U2",
+      "U3"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "SN74ACT240N",
+    "supplier_url": "https://www.mouser.ie/en/ProductDetail/Texas-Instruments/SN74ACT240N?qs=sGAEpiMZZMtOwpHsRTkso3c7BmVStEd3Is7cBkVpzPM%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.ie', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "U5"
+    ],
+    "additional_source": "https://www.ti.com/product/SN74ACT240/part-details/SN74ACT240N",
+    "conclusion": "TI confirms PDIP20 N package. KiCad package model used."
+  },
+  {
+    "mpn": "LF50ABV",
+    "supplier_url": "https://fr.farnell.com/stmicroelectronics/lf50abv/ldo-fixe-5v-0-5a-40-a-125-c/dp/3130160",
+    "error": "HTTPSConnectionPool(host='fr.farnell.com', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "U4"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MFR-25FBF52-105R",
+    "supplier_url": "https://www.mouser.fr/fr/ProductDetail/YAGEO/MFR-25FBF52-105R?qs=oAGoVhmvjhx1xjvQjhBaqA%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "R1",
+      "R4"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MBA02040C9768FC100",
+    "supplier_url": "https://www.mouser.fr/en/c/passive-components/resistors/?resistance=9.76%20Ohms",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "R2",
+      "R3"
+    ],
+    "additional_source": "https://www.mouser.com/en/ProductDetail/Vishay-Beyschlag/MBA02040C9768FC100",
+    "conclusion": "Original BOM link is a resistor category search. Exact-part CAD not retrieved; conservative DIN0204 package model used."
+  },
+  {
+    "mpn": "RNF14BTC12K3",
+    "supplier_url": "https://www.mouser.fr/en/ProductDetail/SEI-Stackpole/RNF14BTC12K3?qs=LnCj936TGbUaYoq1Wc%2FTVQ%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "R5"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MFR-25FBF52-1K",
+    "supplier_url": "https://www.mouser.fr/fr/ProductDetail/YAGEO/MFR-25FBF52-1K?qs=oAGoVhmvjhwCAC47ReWjsQ%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "R10",
+      "R11",
+      "R13",
+      "R6"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MFR-25FBF52-12K",
+    "supplier_url": "https://www.digikey.fr/en/products/detail/yageo/MFR-25FBF52-12K/9138051",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/en/products/detail/yageo/MFR-25FBF52-12K/9138051",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "R7"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MFR-25FBF52-1K8",
+    "supplier_url": "https://www.mouser.fr/ProductDetail/YAGEO/MFR-25FBF52-1K8?qs=oAGoVhmvjhxFlUUkv6aTEg%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "R15",
+      "R16",
+      "R8"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MFR-25FBF52-9K76",
+    "supplier_url": "https://www.digikey.fr/en/products/detail/yageo/MFR-25FBF52-9K76/13217",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/en/products/detail/yageo/MFR-25FBF52-9K76/13217",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "R9"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MFR-25FRF52-60K4",
+    "supplier_url": "https://www.mouser.fr/fr/ProductDetail/YAGEO/MFR-25FRF52-60K4?qs=oAGoVhmvjhwuEJuU8%2FmJxQ%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "R12",
+      "R14"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "MCGPR16V226M5X11",
+    "supplier_url": "https://fr.farnell.com/multicomp-pro/mcgpr16v226m5x11/cap-22-f-16v-20/dp/9451064",
+    "error": "HTTPSConnectionPool(host='fr.farnell.com', port=443): Read timed out. (read timeout=30)",
+    "model_used": "KiCad package model",
+    "references": [
+      "C1"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "K104K15X7RF5TL2",
+    "supplier_url": "https://fr.farnell.com/en-FR/vishay/k104k15x7rf5tl2/cap-0-1-f-50v-10-x7r/dp/2860097",
+    "error": "HTTPSConnectionPool(host='fr.farnell.com', port=443): Read timed out. (read timeout=30)",
+    "model_used": "datasheet envelope",
+    "references": [
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "C317C242F3G5TA",
+    "supplier_url": "https://www.mouser.fr/fr/ProductDetail/KEMET/C317C242F3G5TA?qs=sGAEpiMZZMs7ZEmUmaUL06SW6ZQcwDWyZvLuzRZuX%252BMzfknZ1Ebv5A%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "datasheet envelope",
+    "references": [
+      "C3"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "PTV09A-2015F-B503",
+    "supplier_url": "https://www.mouser.fr/fr/ProductDetail/Bourns/PTV09A-2015F-B503?qs=sGAEpiMZZMtC25l1F4XBUwzDdsXNxLSU8%2F05b1ehHCw%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "datasheet envelope",
+    "references": [
+      "RV2"
+    ],
+    "additional_source": "https://www.mouser.fr/fr/ProductDetail/Bourns/PTV09A-2015F-B503?qs=sGAEpiMZZMtC25l1F4XBUwzDdsXNxLSU8%2F05b1ehHCw%3D",
+    "conclusion": "Supplier page could not be retrieved; exact15mm model not verified downloadable. Datasheet envelope retained."
+  },
+  {
+    "mpn": "PTV09A-2020F-B102",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/bourns-inc/PTV09A-2020F-B102/3781103",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/bourns-inc/PTV09A-2020F-B102/3781103",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "datasheet envelope",
+    "references": [
+      "RV1"
+    ],
+    "additional_source": "https://www.bourns.com/engineering/PTV09/ptv09a-2x20f-xxxx.stp",
+    "conclusion": "Manufacturer20mm-family STEP link listed by DigiKey models/3781103; server returned403. Datasheet envelope retained."
+  },
+  {
+    "mpn": "PTN16-A01220K1B2",
+    "supplier_url": "https://www.mouser.fr/en/ProductDetail/Same-Sky/PTN16-A01220K1B2?qs=VJzv269c%252BPaiDuqAWK2%252BFA%3D%3D",
+    "error": "HTTPSConnectionPool(host='www.mouser.fr', port=443): Read timed out. (read timeout=30)",
+    "model_used": "manufacturer STEP",
+    "references": [
+      "RV3"
+    ],
+    "additional_source": "https://www.sameskydevices.com/product/resource/3dmodel/ptn16-a01220k1b2",
+    "conclusion": "Manufacturer STEP downloaded and included. Lead-row spacing differs from datasheet; PCB follows datasheet p6."
+  },
+  {
+    "mpn": "BAT85S-TR",
+    "supplier_url": "https://www.digikey.fr/en/products/detail/vishay-general-semiconductor-diodes-division/BAT85S-TR/3104128",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/en/products/detail/vishay-general-semiconductor-diodes-division/BAT85S-TR/3104128",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "D1"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "PPTC031LFBN-RC",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC031LFBN-RC/810143",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC031LFBN-RC/810143",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "J3"
+    ],
+    "additional_source": "https://www.digikey.fr/fr/models/810143",
+    "conclusion": "CAD landing page exists, but no direct exact-part3D file was exposed. KiCad1x3 socket package model used."
+  },
+  {
+    "mpn": "BU-1420701236",
+    "supplier_url": "https://fr.farnell.com/mueller-electric/bu-1420701236/conn-rf-sma-fem-50-ohms-pcb/dp/4472531",
+    "error": "HTTPSConnectionPool(host='fr.farnell.com', port=443): Read timed out. (read timeout=30)",
+    "model_used": "datasheet envelope",
+    "references": [
+      "J2"
+    ],
+    "additional_source": "https://www.muellerelectric.com/product_files/4012/DS-BU-1420701236.pdf",
+    "conclusion": "Farnell page timed out; exact-part CAD not retrieved. Datasheet-derived SMA envelope retained; professor-approved vertical part unchanged."
+  },
+  {
+    "mpn": "EEU-FC1H4R7H",
+    "supplier_url": "https://www.digikey.fr/en/products/detail/panasonic-industry/EEU-FC1H4R7H/6109560",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/en/products/detail/panasonic-industry/EEU-FC1H4R7H/6109560",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "C2"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "PPTC061LFBN-RC",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC061LFBN-RC/810145",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC061LFBN-RC/810145",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "J7"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "PPTC081LFBN-RC",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC081LFBN-RC/810147",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC081LFBN-RC/810147",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "J5",
+      "J6"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "PPTC101LFBN-RC",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC101LFBN-RC/810149",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/sullins-connector-solutions/PPTC101LFBN-RC/810149",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "KiCad package model",
+    "references": [
+      "J4"
+    ],
+    "additional_source": null,
+    "conclusion": "No downloadable exact-part STEP verified; package/body checked against bundled datasheet."
+  },
+  {
+    "mpn": "PJ-102AH",
+    "supplier_url": "https://www.digikey.fr/fr/products/detail/same-sky-formerly-cui-devices/PJ-102AH/408448",
+    "http_status": 403,
+    "final_url": "https://www.digikey.fr/fr/products/detail/same-sky-formerly-cui-devices/PJ-102AH/408448",
+    "cad_links": [],
+    "cad_word_present": false,
+    "model_used": "manufacturer STEP",
+    "references": [
+      "J1"
+    ],
+    "additional_source": "https://www.sameskydevices.com/product/resource/3dmodel/pj-102ah",
+    "conclusion": "Manufacturer STEP downloaded and included; original and rigidly aligned STEP/VRML."
+  }
+]

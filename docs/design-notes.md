@@ -13,7 +13,7 @@ The circuit generates two complementary PWM outputs from a shared triangular car
 | Dead time | 0–10% of the switching period |
 | Duty-cycle input | 0–100%, potentiometer or SMA input |
 | Supply | 7–10 V |
-| Board dimensions | 68 × 53 mm, through-hole components |
+| Board dimensions | 75 × 53 mm, through-hole components, Uno Rev3 header pattern |
 
 ## Triangle oscillator
 
@@ -89,3 +89,9 @@ Simulation settings: `VD = 2.5 V`, maximum dead time, `VIN = 8.5 V` and loaded o
 | Dead-time gaps at the fast setting | 0.980 / 0.984 µs |
 
 The dead-time gaps correspond to 9.77% and 9.81% of the switching period.
+
+## Stackable PCB implementation
+
+The current PCB is 75 × 53 mm. A 7 mm control-side extension places the outward-facing potentiometers, regulator and input connectors outside the main stacking area. The 32 header contacts use the official Uno Rev3 pattern. OUT1 is J4.9/D9, OUT2 is J4.8/D10, and common ground is J4.4 and J6.6/J6.7. The [buck converter](https://github.com/MouaadO/synchronous-buck-converter) is the matching power stage.
+
+Signal tracks are 0.25 mm, output routes 0.40 mm and supply/ground routes 0.50 mm. F.Cu includes a 5 V fill and B.Cu a ground fill. The PCB purchasing list and models accompany the current layout.

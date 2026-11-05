@@ -1,0 +1,6 @@
+#VRML V2.0 utf8
+# Datasheet envelope: nominal D5 x H11 mm, 0.5 mm mounting allowance.
+Transform { scale .3937007874 .3937007874 .3937007874 children [
+Transform { translation 1.25 0 6 rotation 1 0 0 1.57079632679 children [ Shape { appearance Appearance { material Material { diffuseColor .05 .25 .52 } } geometry Cylinder { radius 2.5 height 11 } } ] }
+Transform { translation 1.25 0 11.51 rotation 1 0 0 1.57079632679 children [ Shape { appearance Appearance { material Material { diffuseColor .8 .82 .84 } } geometry Cylinder { radius 2.25 height .02 } } ] }
+] }
